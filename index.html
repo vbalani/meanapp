@@ -1,0 +1,27 @@
+<!doctype html>
+
+<!-- this is now the shell file for the Single Page App we will build -->
+<html ng-app="customersApp">
+<head>
+    <title>Angular-Node Shell App</title>
+    <link href="/client/styles/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Add H1 stuff</h1>
+    <h2>Add Something h2 level here</h2>
+    <!-- views from routes and controllers will be injected into the ng-view directive -->
+    <div ng-view></div>
+
+    <script src="client/scripts/angular.js"></script>
+    <script src="client/scripts/angular-route.js"></script>
+    <script src="client/app/app.js"></script>
+    <script src="client/app/controllers/customersController.js"></script>
+    <script src="client/app/controllers/ordersController.js"></script>
+    <script src="client/app/controllers/deptsController.js"></script>
+    <script src="client/app/services/customersFactory.js"></script>
+        <script src="client/app/controllers/catchallController.js"></script>
+
+    <script src="client/app/services/values.js"></script>
+    
+</body>
+</html>

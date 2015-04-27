@@ -1,0 +1,16 @@
+<h2>{{ appSettings.title }}'s Orders</h2>
+<h3>Total records: {{ depts.length }} </h3>
+Filter: <input type="text" ng-model="deptsFilter" />
+<br /><br />
+<table>
+    <tr>
+        <th ng-click="doSort('DEPT_DESCR')">dept </th>
+        <th ng-click="doSort('ACCOUNT_DESCR')">account </th>
+         <th>txn descr </th>
+    </tr>
+    <tr ng-repeat="dept in depts | filter:deptsFilter | orderBy:sortBy:reverse">
+        <td>{{ dept.DEPT_DESCR }}</td>
+        <td>{{ dept.ACCOUNT_DESCR }}</td>
+        <td>{{ dept.DESCR }}</td>
+    </tr>
+</table>

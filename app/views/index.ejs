@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- template sample mixing ejs (something like jade) with angular -->
+<!-- wont get used in a client server setup where the backend is pure REST API -->
+<html ng-app>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <title><%= title %></title>
+</head>
+ 
+<body>
+    <h1><%= title %></h1>
+    <br />
+    <img src="img/person.jpg" alt="Hack Hands logo">
+    <br />
+    <h2> <strong>Angular with ejs </strong</h2>
+<br /><br />
+<div ng-hide="isHidden">  	
+  		Name: <input type="text" ng-model="name" placeholder="enter name" /> {{ name }}
+  	</div>
+  	<div>
+  		/ <br /> <br />
+      /*
+  		 * click into this field and erases the set value
+  		 */ <br /> <br />
+  		other name modifier: <input type="text" ng-model="name" ng-click="name=''"/>		
+  <br />
+	Hide: <input type="checkbox" ng-model="isHidden"/>
+		</div>
+  	<br />
+  	<button ng-click="name='buton name change'">change Name</button>
+</body>
+</html>
