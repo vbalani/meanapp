@@ -10,12 +10,12 @@ Mongoose configuration file has to be loaded before any other configuration in t
  
 
 var config = require('./config/config'),  // get the dev or test or prod env variables
-	mongoose = require('./config/mongoose'), // connect to mongoose
+    mongoose = require('./config/mongoose'), // connect to mongoose
 	express = require('./config/express');
 
 var  app = express(); // initialize the express framwework for our app
  
-mongoose(); // setup the mongoose object that will be used throughout
+ mongoose(); // setup the mongoose object that will be used throughout
             // connect to db
             // initialize all model schemas we want to use.
 
@@ -23,4 +23,4 @@ app.listen(config.port);
 
 module.exports = app; // make the app avail whereever needed.
 
-console.log(process.env.NODE_ENV  + ' server running at http://localhost:' + config.port);
+console.log(process.env.NLENV  + ' server running at http://localhost:' + config.port);

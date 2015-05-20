@@ -38,7 +38,7 @@ module.exports = function() {
     
    //  register all the routes (<routename/type>route.js) with the express app object
     require('../app/routes/index.server.routes.js')(app);
-    require('../app/routes/deptxwalk.server.routes.js')(app);
+    require('../app/routes/data.server.routes.js')(app);
     
     return app;
 };

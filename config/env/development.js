@@ -5,5 +5,5 @@ var port = 1337;
 
 module.exports = {
 	port: port,
-	db: 'mongodb://localhost/vbtest'
+	db: 'mongodb://localhost/' + process.env.NLDB
 };

@@ -12,4 +12,4 @@
 // the below will translate to the development.js file in env folder 
 // that file has the connection params to database
 
-module.exports = require('./env/' + process.env.NODE_ENV + '.js');
+module.exports = require('./env/' + process.env.NLENV + '.js');

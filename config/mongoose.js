@@ -10,7 +10,7 @@ module.exports = function() {
   }
 });
     
- require('../app/models/deptxwalk.model.server');
+// require('../app/models/deptxwalk.model.server');
     
 };
 
