@@ -4,7 +4,7 @@ var elasticsearch = require('elasticsearch');
 
 console.log ('es 2');
 var client = new elasticsearch.Client({
-  host: 'localhost:9200',
+  host: '52.1.144.162:9200',
 //  log: 'trace'
 });
 
@@ -25,7 +25,9 @@ exports.esAutoCompleteFetch = function(req,res) {
   }
   }
 };
-    
+    res.header("Access-Control-Allow-Origin", "*");
+ // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+ // next();
     console.log('srchterm: ' + req.params.srchterm);
     
     srchobj.body.query.match._all.query = req.params.srchterm;
