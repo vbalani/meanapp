@@ -15,7 +15,7 @@ exports.esAutoCompleteFetch = function(req,res) {
   index: 'nldev',
   type: 'vendorsa',
   body: {
-    size: 500,
+    size: 8,
     query: {
       match: {
           _all: {
@@ -36,14 +36,16 @@ exports.esAutoCompleteFetch = function(req,res) {
     var hits = resp.hits.hits;
     //console.log(JSON.stringify(hits));
     
-    console.log("hits " + hits.length + " ==== ");
+    console.log("hits " + hits.length );
     hits2 = [];
-    hits2[0] = hits[0]._source;
-    for (i = 1; i < hits.length; i++) {
-        hits2.push(hits[i]._source);
-    }
-    // console.log(hits2);
+    if (hits.length > 0) { 
+        hits2[0] = hits[0]._source;
+        for (i = 1; i < hits.length; i++) {
+            hits2.push(hits[i]._source);
+        }
+        // console.log(hits2);
         res.json(hits2);
+    }
 }, function (err) {
     console.trace(err.message);
 });
