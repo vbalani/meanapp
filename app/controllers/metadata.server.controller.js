@@ -1,9 +1,10 @@
 // repeat this file for all tables/schemas/collections for now
 // till i figure out how to dynamically connect to tables using the mongoose data dict 
 
+/* not using the following for now 06-28-2015 
 exports.getSchema = function(recname, nluser){
     
-    if (recname == 'deptxwalk')
+    if (recname == 'nl_deptxwalk')
     {
         console.log(recname);
         var schema = new Object;
@@ -19,19 +20,20 @@ exports.getSchema = function(recname, nluser){
         return schema;
     }
 };
+*/
                            
 exports.getSelectList = function(nluser, recname){
     
-    if (recname == 'deptxwalk')
+    if (recname == 'nl_deptxwalk')
     {
         console.log('in metadata controller: ' + recname);
         
         var fieldSelection = new Object;
         // down the road query the meta data object to figure out the select list based on user ACL
-        fieldSelection['DESCR'] = 1;
+        fieldSelection['dept_name'] = 1;
         fieldSelection['_id'] = 0;
-        fieldSelection['VENDOR']=1;
-        fieldSelection['ACCOUNT_DESCR'] = 1;
+        fieldSelection['vendor_id']=1;
+        fieldSelection['account_name'] = 1;
         
         /*selectList = {
             _id: 0,

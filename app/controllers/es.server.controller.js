@@ -13,13 +13,13 @@ console.log('es 3');
 exports.esAutoCompleteFetch = function(req,res) {
     var srchobj = {
   index: 'nldev',
-  type: 'vendorsa',
+  type: 'nl_autocomplete',
   body: {
     size: 8,
     query: {
       match: {
           _all: {
-        query: 'cardinal'
+        query: 'owen erner'
       }
     }
   }
