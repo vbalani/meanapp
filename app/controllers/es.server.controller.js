@@ -11,7 +11,7 @@ var esClient = new elasticsearch.Client({
 console.log('es 3');
 
 
-// response to auto suggest selection request
+// serves the auto suggestions
 exports.esAutoCompleteFetch = function(req,res) {
   
   // instantiate the query dsl for ES
@@ -55,7 +55,27 @@ exports.esAutoCompleteFetch = function(req,res) {
     console.trace(err.message);
 });
 };
-// end auot suggest data response
+// end auto suggestions 
 
 
-// response for main data grid
+// response for a selected suggestion NEX --??
+
+// END response for a selected suggestion NEX --??
+
+
+// response for enter key pressed on a phrase on global search NEX - ??
+
+// END  - response for enter key pressed on a phrase on global search NEX - ??
+
+
+
+
+// response for main data grid NEX ??
+
+// get meta data
+
+// get raw data 
+
+// send meta data + raw data
+
+// END response for main data grid
