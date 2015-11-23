@@ -3,7 +3,7 @@ console.log('es 1');
 var elasticsearch = require('elasticsearch');
 
 console.log ('es 2');
-var client = new elasticsearch.Client({
+var esClient = new elasticsearch.Client({
   host: '52.1.144.162:9200',
 //  log: 'trace'
 });
@@ -13,9 +13,11 @@ console.log('es 3');
 
 // response to auto suggest selection request
 exports.esAutoCompleteFetch = function(req,res) {
+  
+  // instantiate the query dsl for ES
     var srchobj = {
-  index: 'nldev',
-  type: 'nl_autocomplete',
+  index: 'nldev', // this has to be parametrized 
+  type: 'nl_autocomplete', // this has to be parametrized 
   body: {
     size: 8,
     query: {
@@ -34,7 +36,7 @@ exports.esAutoCompleteFetch = function(req,res) {
     
     srchobj.body.query.match._all.query = req.params.srchterm;
     
-    client.search(srchobj).then(function (resp) {
+    esClient.search(srchobj).then(function (resp) {
     var hits = resp.hits.hits;
     //console.log(JSON.stringify(hits));
     
