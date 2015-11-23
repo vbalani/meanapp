@@ -10,6 +10,8 @@ var client = new elasticsearch.Client({
 
 console.log('es 3');
 
+
+// response to auto suggest selection request
 exports.esAutoCompleteFetch = function(req,res) {
     var srchobj = {
   index: 'nldev',
@@ -51,3 +53,7 @@ exports.esAutoCompleteFetch = function(req,res) {
     console.trace(err.message);
 });
 };
+// end auot suggest data response
+
+
+// response for main data grid
