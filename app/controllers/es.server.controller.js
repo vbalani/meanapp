@@ -55,6 +55,9 @@ exports.esAutoCompleteFetch = function(req,res) {
         }
     }
          console.log(hits2[0]);
+        
+       console.log('keys:  ', Object.keys(hits2[0]));
+        
    res.json(hits2);
     
 }, function (err) {
