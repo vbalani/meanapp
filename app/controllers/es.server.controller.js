@@ -54,8 +54,8 @@ exports.esAutoCompleteFetch = function(req,res) {
             hits2.push(hits[i]._source);
         }
     }
-         console.log(hits2);
-   // res.json(hits2);
+         console.log(hits2[0]);
+   res.json(hits2);
     
 }, function (err) {
     console.trace(err.message);
