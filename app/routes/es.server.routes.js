@@ -6,5 +6,5 @@ var ESServer = require('../../app/controllers/es.server.controller');
 // this is a rest API endpoint route
 module.exports = function(app) {
     // callback to controller method to get data 
-	app.route('/esauto/:user/:index/:type/:srchterm').get(ESServer.esAutoCompleteFetch)
+	app.route('/ESQ/:srchterm').get(ESServer.esAutoCompleteFetch)
 };

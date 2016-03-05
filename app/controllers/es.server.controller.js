@@ -4,7 +4,7 @@ var elasticsearch = require('elasticsearch');
 
 console.log ('es 2');
 var esClient = new elasticsearch.Client({
-  host: '52.1.144.162:9200',
+  host: 'localhost:9200',
 //  log: 'trace'
 });
 
@@ -15,7 +15,8 @@ console.log('es 3');
 exports.esAutoCompleteFetch = function(req,res) {
   
   // instantiate the query dsl for ES
-    var srchobj = {
+    var srchobj = {};
+    /*
   index: 'nldev', // this has to be parametrized 
   type: 'nl_autocomplete', // this has to be parametrized 
   body: {
@@ -29,12 +30,17 @@ exports.esAutoCompleteFetch = function(req,res) {
   }
   }
 };
+*/
     res.header("Access-Control-Allow-Origin", "*");
  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
  // next();
     console.log('srchterm: ' + req.params.srchterm);
     
-    srchobj.body.query.match._all.query = req.params.srchterm;
+    srchobj = JSON.parse(srchobj);
+    
+    console.log("Raw QDSL: ", srchobj);
+    
+   // srchobj.body.query.match._all.query = req.params.srchterm;
     
     esClient.search(srchobj).then(function (resp) {
     var hits = resp.hits.hits;
@@ -48,8 +54,8 @@ exports.esAutoCompleteFetch = function(req,res) {
             hits2.push(hits[i]._source);
         }
     }
-        // console.log(hits2);
-    res.json(hits2);
+         console.log(hits2);
+   // res.json(hits2);
     
 }, function (err) {
     console.trace(err.message);

@@ -10,7 +10,7 @@ Mongoose configuration file has to be loaded before any other configuration in t
  
 
 var config = require('./config/config'),  // get the dev or test or prod env variables
-    mongoose = require('./config/mongoose'), // connect to mongoose
+   mongoose = require('./config/mongoose'), // connect to mongoose
 	express = require('./config/express');
 
 var  app = express(); // initialize the express framwework for our app
