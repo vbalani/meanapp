@@ -36,7 +36,7 @@ exports.esAutoCompleteFetch = function(req,res) {
  // next();
     console.log('srchterm: ' + req.params.srchterm);
     
-    srchobj = JSON.parse(srchobj);
+    srchobj = JSON.parse(req.params.srchterm);
     
     console.log("Raw QDSL: ", srchobj);
     
